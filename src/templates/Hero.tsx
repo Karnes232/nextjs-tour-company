@@ -1,48 +1,44 @@
+import Image from 'next/image';
 import Link from 'next/link';
 
 import { Background } from '../background/Background';
 import { Button } from '../button/Button';
 import { HeroOneButton } from '../hero/HeroOneButton';
+import heroImage from '../images/sean-oulashin-KMn4VEeEPR8-unsplash.jpg';
 import { Section } from '../layout/Section';
-import { NavbarTwoColumns } from '../navigation/NavbarTwoColumns';
-import { Logo } from './Logo';
 
 const Hero = () => (
-  <Background color="bg-gray-100">
-    <Section yPadding="py-6">
-      <NavbarTwoColumns logo={<Logo xl />}>
-        <li>
-          <Link href="https://github.com/ixartz/Next-JS-Landing-Page-Starter-Template">
-            <a>GitHub</a>
-          </Link>
-        </li>
-        <li>
-          <Link href="/">
-            <a>Sign in</a>
-          </Link>
-        </li>
-      </NavbarTwoColumns>
-    </Section>
-
-    <Section yPadding="pt-20 pb-32">
-      <HeroOneButton
-        title={
-          <>
-            {'The modern landing page for\n'}
-            <span className="text-primary-500">React developers</span>
-          </>
-        }
-        description="The easiest way to build a React landing page in seconds."
-        button={
-          <Link href="https://creativedesignsguru.com/category/nextjs/">
-            <a>
-              <Button xl>Download Your Free Theme</Button>
-            </a>
-          </Link>
-        }
-      />
-    </Section>
-  </Background>
+  <>
+    <Background color="relative">
+      <Section yPadding="pt-20 pb-32 ">
+        <Image
+          src={heroImage}
+          alt="hero1"
+          layout="fill"
+          objectFit="cover"
+          // objectPosition="50% 80%"
+          className="-z-10 opacity-90 brightness-50"
+          priority
+        />
+        <HeroOneButton
+          title={
+            <>
+              {'Get to Know he Real\n'}
+              <span className="text-primary-500">Dominican Republic</span>
+            </>
+          }
+          description="Dominican Republic is a country in the Caribbean. It is known for its beaches."
+          button={
+            <Link href="/contact">
+              <a>
+                <Button xl>Book Now!</Button>
+              </a>
+            </Link>
+          }
+        />
+      </Section>
+    </Background>
+  </>
 );
 
 export { Hero };

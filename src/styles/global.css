@@ -3,3 +3,15 @@
 @tailwind components;
 
 @tailwind utilities;
+
+.navLinks {
+  @apply hidden text-gray-500 h-6 md:inline-flex cursor-pointer hover:scale-105 transition-all duration-150 ease-out
+}
+
+.footerIcons {
+  @apply text-white h-7 w-7 cursor-pointer
+}
+
+.footerSitemap {
+  @apply text-white cursor-pointer my-0.5
+}
